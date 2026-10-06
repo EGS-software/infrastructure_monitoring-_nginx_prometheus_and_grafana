@@ -12,7 +12,7 @@ SERVER_NAME = os.getenv("SERVER_NAME", "Servidor Desconhecido")
 @app.get("/")
 def read_root():
     """
-    Rota principal: informa qual instância respondeu e retorna data/hora[cite: 2].
+    Rota principal: informa qual instância respondeu e retorna data/hora .
     """
     return {
         "instancia": SERVER_NAME,
@@ -23,7 +23,7 @@ def read_root():
 @app.get("/health")
 def health_check():
     """
-    Rota de verificação de saúde[cite: 2].
+    Rota de verificação de saúde .
     """
     return {"status": "UP", "instancia": SERVER_NAME}
 
@@ -31,7 +31,7 @@ def health_check():
 def cpu_stress(limite: int = 50000):
     """
     Rota de carga artificial: calcula números primos até o 'limite' especificado.
-    Objetivo: provocar alto consumo de CPU temporário e aumento na latência de resposta[cite: 2].
+    Objetivo: provocar alto consumo de CPU temporário e aumento na latência de resposta .
     """
     def is_prime(n):
         if n <= 1:
@@ -42,7 +42,7 @@ def cpu_stress(limite: int = 50000):
         return True
 
     primos = []
-    # Processamento pesado proposital[cite: 2]
+    # Processamento pesado proposital 
     for i in range(2, limite):
         if is_prime(i):
             primos.append(i)
